@@ -1,0 +1,7 @@
+select(X,[X|Ys],Ys).
+select(X,[Y|Ys],[Y|Zs]) :- select(X,Ys,Zs).
+
+
+perm([],[]).
+perm(Xs,[Z|Zs]) :- select(Z,Xs,Ys), perm(Ys,Zs).
+
